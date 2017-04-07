@@ -1,0 +1,1850 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export version="1.0" date="06.03.10" time="12.53">
+	<hosts>
+		<host name="Template_HDD_SMARTMONTOOLS">
+			<proxy_hostid>0</proxy_hostid>
+			<useip>0</useip>
+			<dns></dns>
+			<ip>0.0.0.0</ip>
+			<port>10050</port>
+			<status>3</status>
+			<useipmi>0</useipmi>
+			<ipmi_ip>127.0.0.1</ipmi_ip>
+			<ipmi_port>623</ipmi_port>
+			<ipmi_authtype>-1</ipmi_authtype>
+			<ipmi_privilege>2</ipmi_privilege>
+			<ipmi_username></ipmi_username>
+			<ipmi_password></ipmi_password>
+			<groups>
+				<group>Templates_Production</group>
+			</groups>
+			<triggers>
+				<trigger>
+					<description>HDD A, Errors has been registered in errorlog!</description>
+					<type>0</type>
+					<expression>{Template_HDD_SMARTMONTOOLS:uHDD.errorlog.[sda].last(0)}&gt;0</expression>
+					<url></url>
+					<status>0</status>
+					<priority>4</priority>
+					<comments>Possible HDD failure!</comments>
+				</trigger>
+				<trigger>
+					<description>HDD B, Errors has been registered in errorlog!</description>
+					<type>0</type>
+					<expression>{Template_HDD_SMARTMONTOOLS:uHDD.errorlog.[sdb].last(0)}&gt;0</expression>
+					<url></url>
+					<status>0</status>
+					<priority>4</priority>
+					<comments>Possible HDD failure!</comments>
+				</trigger>
+				<trigger>
+					<description>HDD C, Errors has been registered in errorlog!</description>
+					<type>0</type>
+					<expression>{Template_HDD_SMARTMONTOOLS:uHDD.errorlog.[sdc].last(0)}&gt;0</expression>
+					<url></url>
+					<status>0</status>
+					<priority>4</priority>
+					<comments>Possible HDD failure!</comments>
+				</trigger>
+				<trigger>
+					<description>HDD D, Errors has been registered in errorlog!</description>
+					<type>0</type>
+					<expression>{Template_HDD_SMARTMONTOOLS:uHDD.errorlog.[sdd].last(0)}&gt;0</expression>
+					<url></url>
+					<status>0</status>
+					<priority>4</priority>
+					<comments>Possible HDD failure!</comments>
+				</trigger>
+				<trigger>
+					<description>HDD A диск был заменен</description>
+					<type>0</type>
+					<expression>{Template_HDD_SMARTMONTOOLS:uHDD.sn.[sda].diff(0)}=1</expression>
+					<url></url>
+					<status>0</status>
+					<priority>4</priority>
+					<comments>Серийный номер диска другой</comments>
+				</trigger>
+				<trigger>
+					<description>HDD B диск был заменен</description>
+					<type>0</type>
+					<expression>{Template_HDD_SMARTMONTOOLS:uHDD.sn.[sdb].diff(0)}=1</expression>
+					<url></url>
+					<status>0</status>
+					<priority>4</priority>
+					<comments>Серийный номер диска другой</comments>
+				</trigger>
+				<trigger>
+					<description>HDD C диск был заменен</description>
+					<type>0</type>
+					<expression>{Template_HDD_SMARTMONTOOLS:uHDD.sn.[sdc].diff(0)}=1</expression>
+					<url></url>
+					<status>0</status>
+					<priority>4</priority>
+					<comments>Серийный номер диска другой</comments>
+				</trigger>
+				<trigger>
+					<description>HDD D диск был заменен</description>
+					<type>0</type>
+					<expression>{Template_HDD_SMARTMONTOOLS:uHDD.sn.[sdd].diff(0)}=1</expression>
+					<url></url>
+					<status>0</status>
+					<priority>4</priority>
+					<comments>Серийный номер диска другой</comments>
+				</trigger>
+				<trigger>
+					<description>HDD A, SMART, Reallocated Sectors Count has been registered</description>
+					<type>0</type>
+					<expression>{Template_HDD_SMARTMONTOOLS:uHDD[sda,5 Reallocated].last(0)}&gt;0</expression>
+					<url></url>
+					<status>0</status>
+					<priority>3</priority>
+					<comments>Possible HDD failure</comments>
+				</trigger>
+				<trigger>
+					<description>HDD A: SMART Current_Pending_Sector has been registered</description>
+					<type>0</type>
+					<expression>{Template_HDD_SMARTMONTOOLS:uHDD[sda,Current_Pending_Sector].last(0)}&gt;0</expression>
+					<url></url>
+					<status>0</status>
+					<priority>3</priority>
+					<comments>Possible HDD failure</comments>
+				</trigger>
+				<trigger>
+					<description>HDD A: SMART Spin Retry Count зафиксированы</description>
+					<type>0</type>
+					<expression>{Template_HDD_SMARTMONTOOLS:uHDD[sda,Spin_Retry_Count].last(0)}&gt;0</expression>
+					<url></url>
+					<status>0</status>
+					<priority>3</priority>
+					<comments>Possible HDD failure</comments>
+				</trigger>
+				<trigger>
+					<description>{HOSTNAME} Hard Disk's Temperature is too high!</description>
+					<type>0</type>
+					<expression>{Template_HDD_SMARTMONTOOLS:uHDD[sda,Temperature_Celsius].last(0)}&gt;47</expression>
+					<url></url>
+					<status>0</status>
+					<priority>2</priority>
+					<comments></comments>
+				</trigger>
+				<trigger>
+					<description>HDD A: Температура диска очень высока!</description>
+					<type>0</type>
+					<expression>{Template_HDD_SMARTMONTOOLS:uHDD[sda,Temperature_Celsius].last(0)}&gt;65</expression>
+					<url></url>
+					<status>0</status>
+					<priority>4</priority>
+					<comments></comments>
+				</trigger>
+				<trigger>
+					<description>HDD A: SMART UltraDMA CRC Error Count зафиксированы. возможно кабель</description>
+					<type>0</type>
+					<expression>{Template_HDD_SMARTMONTOOLS:uHDD[sda,UDMA_CRC_Error].last(0)}&gt;0</expression>
+					<url></url>
+					<status>0</status>
+					<priority>3</priority>
+					<comments></comments>
+				</trigger>
+				<trigger>
+					<description>HDD B, SMART, Reallocated Sectors Count has been registered</description>
+					<type>0</type>
+					<expression>{Template_HDD_SMARTMONTOOLS:uHDD[sdb,5 Reallocated].last(0)}&gt;0</expression>
+					<url></url>
+					<status>0</status>
+					<priority>3</priority>
+					<comments>Possible HDD failure</comments>
+				</trigger>
+				<trigger>
+					<description>HDD B: SMART Current_Pending_Sector has been registered</description>
+					<type>0</type>
+					<expression>{Template_HDD_SMARTMONTOOLS:uHDD[sdb,Current_Pending_Sector].last(0)}&gt;0</expression>
+					<url></url>
+					<status>0</status>
+					<priority>3</priority>
+					<comments>Possible HDD failure</comments>
+				</trigger>
+				<trigger>
+					<description>HDD B: SMART Spin Retry Count зафиксированы</description>
+					<type>0</type>
+					<expression>{Template_HDD_SMARTMONTOOLS:uHDD[sdb,Spin_Retry_Count].last(0)}&gt;0</expression>
+					<url></url>
+					<status>0</status>
+					<priority>3</priority>
+					<comments>Possible HDD failure</comments>
+				</trigger>
+				<trigger>
+					<description>{HOSTNAME} Hard Disk's Temperature is too high!</description>
+					<type>0</type>
+					<expression>{Template_HDD_SMARTMONTOOLS:uHDD[sdb,Temperature_Celsius].last(0)}&gt;47</expression>
+					<url></url>
+					<status>0</status>
+					<priority>2</priority>
+					<comments></comments>
+				</trigger>
+				<trigger>
+					<description>HDD B: Температура диска очень высока!</description>
+					<type>0</type>
+					<expression>{Template_HDD_SMARTMONTOOLS:uHDD[sdb,Temperature_Celsius].last(0)}&gt;65</expression>
+					<url></url>
+					<status>0</status>
+					<priority>4</priority>
+					<comments></comments>
+				</trigger>
+				<trigger>
+					<description>HDD B: SMART UltraDMA CRC Error Count зафиксированы. возможно кабель</description>
+					<type>0</type>
+					<expression>{Template_HDD_SMARTMONTOOLS:uHDD[sdb,UDMA_CRC_Error].last(0)}&gt;0</expression>
+					<url></url>
+					<status>0</status>
+					<priority>3</priority>
+					<comments></comments>
+				</trigger>
+				<trigger>
+					<description>HDD C, SMART, Reallocated Sectors Count has been registered</description>
+					<type>0</type>
+					<expression>{Template_HDD_SMARTMONTOOLS:uHDD[sdc,5 Reallocated].last(0)}&gt;0</expression>
+					<url></url>
+					<status>0</status>
+					<priority>3</priority>
+					<comments>Possible HDD failure</comments>
+				</trigger>
+				<trigger>
+					<description>HDD C: SMART Current_Pending_Sector has been registered</description>
+					<type>0</type>
+					<expression>{Template_HDD_SMARTMONTOOLS:uHDD[sdc,Current_Pending_Sector].last(0)}&gt;0</expression>
+					<url></url>
+					<status>0</status>
+					<priority>3</priority>
+					<comments>Possible HDD failure</comments>
+				</trigger>
+				<trigger>
+					<description>HDD C: SMART Spin Retry Count зафиксированы</description>
+					<type>0</type>
+					<expression>{Template_HDD_SMARTMONTOOLS:uHDD[sdc,Spin_Retry_Count].last(0)}&gt;0</expression>
+					<url></url>
+					<status>0</status>
+					<priority>3</priority>
+					<comments>Possible HDD failure</comments>
+				</trigger>
+				<trigger>
+					<description>{HOSTNAME} Hard Disk's Temperature is too high!</description>
+					<type>0</type>
+					<expression>{Template_HDD_SMARTMONTOOLS:uHDD[sdc,Temperature_Celsius].last(0)}&gt;47</expression>
+					<url></url>
+					<status>0</status>
+					<priority>2</priority>
+					<comments></comments>
+				</trigger>
+				<trigger>
+					<description>HDD C: Температура диска очень высока!</description>
+					<type>0</type>
+					<expression>{Template_HDD_SMARTMONTOOLS:uHDD[sdc,Temperature_Celsius].last(0)}&gt;65</expression>
+					<url></url>
+					<status>0</status>
+					<priority>4</priority>
+					<comments></comments>
+				</trigger>
+				<trigger>
+					<description>HDD C: SMART UltraDMA CRC Error Count зафиксированы. возможно кабель</description>
+					<type>0</type>
+					<expression>{Template_HDD_SMARTMONTOOLS:uHDD[sdc,UDMA_CRC_Error].last(0)}&gt;0</expression>
+					<url></url>
+					<status>0</status>
+					<priority>3</priority>
+					<comments></comments>
+				</trigger>
+				<trigger>
+					<description>HDD D, SMART, Reallocated Sectors Count has been registered</description>
+					<type>0</type>
+					<expression>{Template_HDD_SMARTMONTOOLS:uHDD[sdd,5 Reallocated].last(0)}&gt;0</expression>
+					<url></url>
+					<status>0</status>
+					<priority>3</priority>
+					<comments>Possible HDD failure</comments>
+				</trigger>
+				<trigger>
+					<description>HDD D: SMART Current_Pending_Sector has been registered</description>
+					<type>0</type>
+					<expression>{Template_HDD_SMARTMONTOOLS:uHDD[sdd,Current_Pending_Sector].last(0)}&gt;0</expression>
+					<url></url>
+					<status>0</status>
+					<priority>3</priority>
+					<comments>Possible HDD failure</comments>
+				</trigger>
+				<trigger>
+					<description>HDD D: SMART Spin Retry Count зафиксированы</description>
+					<type>0</type>
+					<expression>{Template_HDD_SMARTMONTOOLS:uHDD[sdd,Spin_Retry_Count].last(0)}&gt;0</expression>
+					<url></url>
+					<status>0</status>
+					<priority>3</priority>
+					<comments>Possible HDD failure</comments>
+				</trigger>
+				<trigger>
+					<description>{HOSTNAME} Hard Disk's Temperature is too high!</description>
+					<type>0</type>
+					<expression>{Template_HDD_SMARTMONTOOLS:uHDD[sdd,Temperature_Celsius].last(0)}&gt;47</expression>
+					<url></url>
+					<status>0</status>
+					<priority>2</priority>
+					<comments></comments>
+				</trigger>
+				<trigger>
+					<description>HDD D: Температура диска очень высока!</description>
+					<type>0</type>
+					<expression>{Template_HDD_SMARTMONTOOLS:uHDD[sdd,Temperature_Celsius].last(0)}&gt;65</expression>
+					<url></url>
+					<status>0</status>
+					<priority>4</priority>
+					<comments></comments>
+				</trigger>
+				<trigger>
+					<description>HDD D: SMART UltraDMA CRC Error Count зафиксированы. возможно кабель</description>
+					<type>0</type>
+					<expression>{Template_HDD_SMARTMONTOOLS:uHDD[sdd,UDMA_CRC_Error].last(0)}&gt;0</expression>
+					<url></url>
+					<status>0</status>
+					<priority>3</priority>
+					<comments></comments>
+				</trigger>
+			</triggers>
+			<items>
+				<item type="7" key="uHDD.errorlog.[sda]" value_type="3">
+					<description>HDD A Кол-во ошибок в журнале</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>7200</delay>
+					<history>7</history>
+					<trends>0</trends>
+					<status>0</status>
+					<data_type>0</data_type>
+					<units></units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD A</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD.errorlog.[sdb]" value_type="3">
+					<description>HDD B Кол-во ошибок в журнале</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>7200</delay>
+					<history>7</history>
+					<trends>0</trends>
+					<status>0</status>
+					<data_type>0</data_type>
+					<units></units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD B</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD.errorlog.[sdc]" value_type="3">
+					<description>HDD C Кол-во ошибок в журнале</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>7200</delay>
+					<history>7</history>
+					<trends>0</trends>
+					<status>1</status>
+					<data_type>0</data_type>
+					<units></units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD C</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD.errorlog.[sdd]" value_type="3">
+					<description>HDD D Кол-во ошибок в журнале</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>7200</delay>
+					<history>7</history>
+					<trends>0</trends>
+					<status>1</status>
+					<data_type>0</data_type>
+					<units></units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD D</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD.health.[sda]" value_type="4">
+					<description>HDD A Общее состояние</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>7200</delay>
+					<history>90</history>
+					<trends>0</trends>
+					<status>0</status>
+					<data_type>0</data_type>
+					<units></units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD A</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD.health.[sdb]" value_type="4">
+					<description>HDD B Общее состояние</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>7200</delay>
+					<history>90</history>
+					<trends>0</trends>
+					<status>0</status>
+					<data_type>0</data_type>
+					<units></units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD B</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD.health.[sdc]" value_type="4">
+					<description>HDD C Общее состояние</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>7200</delay>
+					<history>90</history>
+					<trends>0</trends>
+					<status>1</status>
+					<data_type>0</data_type>
+					<units></units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD C</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD.health.[sdd]" value_type="4">
+					<description>HDD D Общее состояние</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>7200</delay>
+					<history>90</history>
+					<trends>0</trends>
+					<status>1</status>
+					<data_type>0</data_type>
+					<units></units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD D</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD.model.[sda]" value_type="4">
+					<description>HDD A Модель</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>86400</delay>
+					<history>90</history>
+					<trends>0</trends>
+					<status>0</status>
+					<data_type>0</data_type>
+					<units></units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD A</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD.model.[sdb]" value_type="4">
+					<description>HDD B Модель</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>86400</delay>
+					<history>90</history>
+					<trends>0</trends>
+					<status>0</status>
+					<data_type>0</data_type>
+					<units></units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD B</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD.model.[sdc]" value_type="4">
+					<description>HDD C Модель</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>86400</delay>
+					<history>90</history>
+					<trends>0</trends>
+					<status>1</status>
+					<data_type>0</data_type>
+					<units></units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD C</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD.model.[sdd]" value_type="4">
+					<description>HDD D Модель</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>86400</delay>
+					<history>90</history>
+					<trends>0</trends>
+					<status>1</status>
+					<data_type>0</data_type>
+					<units></units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD D</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD.rv.a" value_type="3">
+					<description>uHDD.rv.a</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>7200</delay>
+					<history>7</history>
+					<trends>7</trends>
+					<status>1</status>
+					<data_type>0</data_type>
+					<units></units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD A</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD.rv.b" value_type="3">
+					<description>uHDD.rv.b</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>7200</delay>
+					<history>7</history>
+					<trends>7</trends>
+					<status>1</status>
+					<data_type>0</data_type>
+					<units></units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD B</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD.sn.[sda]" value_type="4">
+					<description>HDD A Серийный номер</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>86400</delay>
+					<history>90</history>
+					<trends>0</trends>
+					<status>0</status>
+					<data_type>0</data_type>
+					<units></units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD A</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD.sn.[sdb]" value_type="4">
+					<description>HDD B Серийный номер</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>86400</delay>
+					<history>90</history>
+					<trends>0</trends>
+					<status>0</status>
+					<data_type>0</data_type>
+					<units></units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD B</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD.sn.[sdc]" value_type="4">
+					<description>HDD C Серийный номер</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>86400</delay>
+					<history>90</history>
+					<trends>0</trends>
+					<status>1</status>
+					<data_type>0</data_type>
+					<units></units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD C</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD.sn.[sdd]" value_type="4">
+					<description>HDD D Серийный номер</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>86400</delay>
+					<history>90</history>
+					<trends>0</trends>
+					<status>1</status>
+					<data_type>0</data_type>
+					<units></units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD D</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD[sda,5 Reallocated]" value_type="3">
+					<description>HDD A: ID 5 	Reallocated Sectors Count</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>7200</delay>
+					<history>7</history>
+					<trends>0</trends>
+					<status>0</status>
+					<data_type>0</data_type>
+					<units></units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD A</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD[sda,Current_Pending_Sector]" value_type="3">
+					<description>HDD A: ID 197 Current_Pending_Sector</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>7200</delay>
+					<history>7</history>
+					<trends>0</trends>
+					<status>0</status>
+					<data_type>0</data_type>
+					<units></units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD A</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD[sda,Offline_Uncorrectable]" value_type="3">
+					<description>HDD A: ID 198 Offline_Uncorrectable</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>7200</delay>
+					<history>7</history>
+					<trends>0</trends>
+					<status>0</status>
+					<data_type>0</data_type>
+					<units></units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD A</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD[sda,Power_On]" value_type="3">
+					<description>HDD A, ID 9 Количество наработанных часов</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>86400</delay>
+					<history>7</history>
+					<trends>0</trends>
+					<status>0</status>
+					<data_type>0</data_type>
+					<units></units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD A</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD[sda,Spin_Retry_Count]" value_type="3">
+					<description>HDD A: ID 10 Spin_Retry_Count</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>7200</delay>
+					<history>7</history>
+					<trends>7</trends>
+					<status>0</status>
+					<data_type>0</data_type>
+					<units></units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD A</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD[sda,Temperature_Celsius]" value_type="3">
+					<description>HDD A: ID 194 Temperature</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>600</delay>
+					<history>7</history>
+					<trends>7</trends>
+					<status>0</status>
+					<data_type>0</data_type>
+					<units>C</units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD A</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD[sda,UDMA_CRC_Error]" value_type="3">
+					<description>HDD A: ID 199 UDMA_CRC_Error</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>7200</delay>
+					<history>7</history>
+					<trends>0</trends>
+					<status>0</status>
+					<data_type>0</data_type>
+					<units></units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD A</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD[sdb,5 Reallocated]" value_type="3">
+					<description>HDD B: ID 5 	Reallocated Sectors Count</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>7200</delay>
+					<history>7</history>
+					<trends>0</trends>
+					<status>0</status>
+					<data_type>0</data_type>
+					<units></units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD B</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD[sdb,Current_Pending_Sector]" value_type="3">
+					<description>HDD B: ID 197 Current_Pending_Sector</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>7200</delay>
+					<history>7</history>
+					<trends>0</trends>
+					<status>0</status>
+					<data_type>0</data_type>
+					<units></units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD B</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD[sdb,Offline_Uncorrectable]" value_type="3">
+					<description>HDD B: ID 198 Offline_Uncorrectable</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>7200</delay>
+					<history>7</history>
+					<trends>0</trends>
+					<status>0</status>
+					<data_type>0</data_type>
+					<units></units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD B</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD[sdb,Power_On]" value_type="3">
+					<description>HDD B, ID 9 Количество наработанных часов</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>86400</delay>
+					<history>7</history>
+					<trends>0</trends>
+					<status>0</status>
+					<data_type>0</data_type>
+					<units></units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD B</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD[sdb,Spin_Retry_Count]" value_type="3">
+					<description>HDD B: ID 10 Spin_Retry_Count</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>7200</delay>
+					<history>7</history>
+					<trends>7</trends>
+					<status>0</status>
+					<data_type>0</data_type>
+					<units></units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD B</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD[sdb,Temperature_Celsius]" value_type="3">
+					<description>HDD B: ID 194 Temperature</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>600</delay>
+					<history>7</history>
+					<trends>7</trends>
+					<status>0</status>
+					<data_type>0</data_type>
+					<units>C</units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD B</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD[sdb,UDMA_CRC_Error]" value_type="3">
+					<description>HDD B: ID 199 UDMA_CRC_Error</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>7200</delay>
+					<history>7</history>
+					<trends>0</trends>
+					<status>0</status>
+					<data_type>0</data_type>
+					<units></units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD B</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD[sdc,5 Reallocated]" value_type="3">
+					<description>HDD C: ID 5 	Reallocated Sectors Count</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>7200</delay>
+					<history>7</history>
+					<trends>0</trends>
+					<status>1</status>
+					<data_type>0</data_type>
+					<units></units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD C</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD[sdc,Current_Pending_Sector]" value_type="3">
+					<description>HDD C: ID 197 Current_Pending_Sector</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>7200</delay>
+					<history>7</history>
+					<trends>0</trends>
+					<status>1</status>
+					<data_type>0</data_type>
+					<units></units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD C</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD[sdc,Offline_Uncorrectable]" value_type="3">
+					<description>HDD C: ID 198 Offline_Uncorrectable</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>7200</delay>
+					<history>7</history>
+					<trends>0</trends>
+					<status>1</status>
+					<data_type>0</data_type>
+					<units></units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD C</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD[sdc,Power_On]" value_type="3">
+					<description>HDD C, ID 9 Количество наработанных часов</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>86400</delay>
+					<history>7</history>
+					<trends>0</trends>
+					<status>1</status>
+					<data_type>0</data_type>
+					<units></units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD C</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD[sdc,Spin_Retry_Count]" value_type="3">
+					<description>HDD C: ID 10 Spin_Retry_Count</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>7200</delay>
+					<history>7</history>
+					<trends>7</trends>
+					<status>1</status>
+					<data_type>0</data_type>
+					<units></units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD C</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD[sdc,Temperature_Celsius]" value_type="3">
+					<description>HDD C: ID 194 Temperature</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>600</delay>
+					<history>7</history>
+					<trends>7</trends>
+					<status>1</status>
+					<data_type>0</data_type>
+					<units>C</units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD C</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD[sdc,UDMA_CRC_Error]" value_type="3">
+					<description>HDD C: ID 199 UDMA_CRC_Error</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>7200</delay>
+					<history>7</history>
+					<trends>0</trends>
+					<status>1</status>
+					<data_type>0</data_type>
+					<units></units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD C</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD[sdd,5 Reallocated]" value_type="3">
+					<description>HDD D: ID 5 	Reallocated Sectors Count</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>7200</delay>
+					<history>7</history>
+					<trends>0</trends>
+					<status>1</status>
+					<data_type>0</data_type>
+					<units></units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD D</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD[sdd,Current_Pending_Sector]" value_type="3">
+					<description>HDD D: ID 197 Current_Pending_Sector</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>7200</delay>
+					<history>7</history>
+					<trends>0</trends>
+					<status>1</status>
+					<data_type>0</data_type>
+					<units></units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD D</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD[sdd,Offline_Uncorrectable]" value_type="3">
+					<description>HDD D: ID 198 Offline_Uncorrectable</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>7200</delay>
+					<history>7</history>
+					<trends>0</trends>
+					<status>1</status>
+					<data_type>0</data_type>
+					<units></units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD D</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD[sdd,Power_On]" value_type="3">
+					<description>HDD D, ID 9 Количество наработанных часов</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>86400</delay>
+					<history>7</history>
+					<trends>0</trends>
+					<status>1</status>
+					<data_type>0</data_type>
+					<units></units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD D</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD[sdd,Spin_Retry_Count]" value_type="3">
+					<description>HDD D: ID 10 Spin_Retry_Count</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>7200</delay>
+					<history>7</history>
+					<trends>7</trends>
+					<status>1</status>
+					<data_type>0</data_type>
+					<units></units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD D</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD[sdd,Temperature_Celsius]" value_type="3">
+					<description>HDD D: ID 194 Temperature</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>600</delay>
+					<history>7</history>
+					<trends>7</trends>
+					<status>1</status>
+					<data_type>0</data_type>
+					<units>C</units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD D</application>
+					</applications>
+				</item>
+				<item type="7" key="uHDD[sdd,UDMA_CRC_Error]" value_type="3">
+					<description>HDD D: ID 199 UDMA_CRC_Error</description>
+					<ipmi_sensor></ipmi_sensor>
+					<delay>7200</delay>
+					<history>7</history>
+					<trends>0</trends>
+					<status>1</status>
+					<data_type>0</data_type>
+					<units></units>
+					<multiplier>0</multiplier>
+					<delta>0</delta>
+					<formula>1</formula>
+					<lastlogsize>0</lastlogsize>
+					<logtimefmt></logtimefmt>
+					<delay_flex></delay_flex>
+					<authtype>0</authtype>
+					<username></username>
+					<password></password>
+					<publickey></publickey>
+					<privatekey></privatekey>
+					<params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+					<trapper_hosts></trapper_hosts>
+					<snmp_community>public</snmp_community>
+					<snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+					<snmp_port>161</snmp_port>
+					<snmpv3_securityname></snmpv3_securityname>
+					<snmpv3_securitylevel>0</snmpv3_securitylevel>
+					<snmpv3_authpassphrase></snmpv3_authpassphrase>
+					<snmpv3_privpassphrase></snmpv3_privpassphrase>
+					<applications>
+						<application>HDD D</application>
+					</applications>
+				</item>
+			</items>
+			<templates/>
+			<graphs/>
+			<macros/>
+		</host>
+	</hosts>
+	<dependencies>
+		<dependency description="Template_HDD_SMARTMONTOOLS:{HOSTNAME} Hard Disk's Temperature is too high!">
+			<depends>Template_HDD_SMARTMONTOOLS:HDD A: Температура диска очень высока!</depends>
+		</dependency>
+		<dependency description="Template_HDD_SMARTMONTOOLS:{HOSTNAME} Hard Disk's Temperature is too high!">
+			<depends>Template_HDD_SMARTMONTOOLS:HDD B: Температура диска очень высока!</depends>
+		</dependency>
+		<dependency description="Template_HDD_SMARTMONTOOLS:{HOSTNAME} Hard Disk's Temperature is too high!">
+			<depends>Template_HDD_SMARTMONTOOLS:HDD C: Температура диска очень высока!</depends>
+		</dependency>
+		<dependency description="Template_HDD_SMARTMONTOOLS:{HOSTNAME} Hard Disk's Temperature is too high!">
+			<depends>Template_HDD_SMARTMONTOOLS:HDD D: Температура диска очень высока!</depends>
+		</dependency>
+	</dependencies>
+</zabbix_export>
